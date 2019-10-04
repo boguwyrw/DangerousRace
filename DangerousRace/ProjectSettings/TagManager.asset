@@ -7,6 +7,10 @@ TagManager:
   - Street
   - Water
   - Sand
+  - Ice
+  - DisappearStreet
+  - JumpingStreet
+  - SwingStreet
   layers:
   - Default
   - TransparentFX
