@@ -49,6 +49,21 @@ public class PlayerControlScript : MonoBehaviour {
             }
         }
 
+        if (Input.GetKey(KeyCode.R))
+        {
+            if ((transform.localEulerAngles.y > 45.0f) && (transform.localEulerAngles.y < 135.0f))
+            {
+                transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+            else if ((transform.localEulerAngles.y < 315.0f) && (transform.localEulerAngles.y > 225.0f))
+            {
+                transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+            }
+            else {
+                transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            }
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,7 +78,12 @@ public class PlayerControlScript : MonoBehaviour {
             playerMovmentSpeed = 7.0f;
             playerRotationSpeed = 15.0f;
         }
-        
+        if (collision.gameObject.CompareTag("Ice"))
+        {
+            playerMovmentSpeed = 12.0f;
+            playerRotationSpeed = 180.0f;
+        }
+
         if (collision.gameObject.CompareTag("Street"))
         {
             playerMovmentSpeed = 15.0f;

@@ -11,6 +11,7 @@ TagManager:
   - DisappearStreet
   - JumpingStreet
   - SwingStreet
+  - NarrowStreet
   layers:
   - Default
   - TransparentFX
