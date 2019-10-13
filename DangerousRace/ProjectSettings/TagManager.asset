@@ -12,6 +12,7 @@ TagManager:
   - JumpingStreet
   - SwingStreet
   - NarrowStreet
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,11 @@ public class PlayerControlScript : MonoBehaviour {
     private float playerRotationSpeed = 50.0f;
 
     private bool isCarBackUp = false;
+    private Vector3 playerResetPosition;
+    private float playerRotationY = 0.0f;
 
-	void Start () {
+
+    void Start () {
 		
 	}
 
@@ -59,13 +62,33 @@ public class PlayerControlScript : MonoBehaviour {
             {
                 transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
             }
+            else if ((transform.localEulerAngles.y > 135.0f) && (transform.localEulerAngles.y < 225.0f))
+            {
+                transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            }
             else {
                 transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             }
         }
 
-    }
+        if (transform.position.y < -1.0f)
+        {
+            transform.position = new Vector3(playerResetPosition.x, 0.5f, playerResetPosition.z);
+            transform.rotation = Quaternion.Euler(0.0f, playerRotationY, 0.0f);
+        }
 
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Checkpoint"))
+        {
+            playerResetPosition = other.transform.position;
+            //playerRotationY = other.transform.rotation.y;
+            playerRotationY = other.transform.localEulerAngles.y; 
+        }
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Water"))
