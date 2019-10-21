@@ -6,7 +6,7 @@ public class JumpingStreetScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerTwo"))
         {
             transform.Translate(0.0f, 20 * Time.deltaTime, 0.0f);
         }

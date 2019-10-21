@@ -1086,9 +1086,8 @@ GameObject:
   - component: {fileID: 193066097}
   - component: {fileID: 193066096}
   - component: {fileID: 193066095}
-  - component: {fileID: 193066094}
   m_Layer: 0
-  m_Name: PlayerCamera
+  m_Name: PlayerTwoCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,25 +1106,13 @@ Transform:
   m_Father: {fileID: 1004807171}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 90, z: 0}
---- !u!114 &193066094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 193066092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3681b685a2b33b14fb3b9775ca7d9f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backCamera: {fileID: 354446619}
 --- !u!81 &193066095
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 193066092}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &193066096
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1154,7 +1141,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1486,7 +1473,6 @@ GameObject:
   - component: {fileID: 288116164}
   - component: {fileID: 288116163}
   - component: {fileID: 288116162}
-  - component: {fileID: 288116165}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -1542,7 +1528,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1557,18 +1543,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &288116165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 288116160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3681b685a2b33b14fb3b9775ca7d9f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backCamera: {fileID: 1768238173}
 --- !u!1001 &290203508
 Prefab:
   m_ObjectHideFlags: 0
@@ -2162,7 +2136,7 @@ GameObject:
   - component: {fileID: 354446618}
   - component: {fileID: 354446617}
   m_Layer: 0
-  m_Name: BackCamera
+  m_Name: BackCameraTwo
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2216,7 +2190,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -8484,11 +8458,11 @@ GameObject:
   - component: {fileID: 1004807170}
   - component: {fileID: 1004807169}
   - component: {fileID: 1004807168}
-  - component: {fileID: 1004807167}
   - component: {fileID: 1004807166}
+  - component: {fileID: 1004807172}
   m_Layer: 0
   m_Name: CorvetteTestDriver
-  m_TagString: Player
+  m_TagString: PlayerTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8507,20 +8481,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1004807167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1004807165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b562c02f381b6a40a3f4358a202fc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovmentSpeed: 15
-  playerRotationSpeed: 25
+  m_CollisionDetection: 1
 --- !u!23 &1004807168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8581,7 +8542,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004807165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 2.5}
+  m_LocalPosition: {x: 0, y: 0.5, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 193066093}
@@ -8590,6 +8551,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1004807172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004807165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed5dc5c8c7d00449b397edef069187a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovmentSpeed: 15
+  playerRotationSpeed: 50
+  playerTwoObj: {fileID: 1004807165}
 --- !u!1 &1005225295
 GameObject:
   m_ObjectHideFlags: 0
@@ -8601,8 +8576,8 @@ GameObject:
   - component: {fileID: 1005225298}
   - component: {fileID: 1005225297}
   - component: {fileID: 1005225296}
-  - component: {fileID: 1005225300}
   - component: {fileID: 1005225301}
+  - component: {fileID: 1005225302}
   m_Layer: 0
   m_Name: CamaroTestDriver
   m_TagString: Player
@@ -8670,7 +8645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1005225295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0.5, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 288116161}
@@ -8679,19 +8654,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1005225300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1005225295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b562c02f381b6a40a3f4358a202fc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMovmentSpeed: 15
-  playerRotationSpeed: 25
 --- !u!54 &1005225301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8706,7 +8668,21 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &1005225302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005225295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed5dc5c8c7d00449b397edef069187a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovmentSpeed: 15
+  playerRotationSpeed: 50
+  playerTwoObj: {fileID: 1004807165}
 --- !u!1001 &1010961538
 Prefab:
   m_ObjectHideFlags: 0
@@ -12060,6 +12036,51 @@ Transform:
   m_PrefabParentObject: {fileID: 4575595831610042, guid: e973d045a447c27449a032e2911a1075,
     type: 2}
   m_PrefabInternal: {fileID: 1461896883}
+--- !u!1 &1463214958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1463214959}
+  - component: {fileID: 1463214960}
+  m_Layer: 0
+  m_Name: GameControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1463214959
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1463214958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463214960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1463214958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3681b685a2b33b14fb3b9775ca7d9f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 288116164}
+  playerTwoCamera: {fileID: 193066097}
+  backCameraOne: {fileID: 1768238173}
+  backCameraTwo: {fileID: 354446619}
+  playerTwoObj: {fileID: 1004807165}
 --- !u!1001 &1463552367
 Prefab:
   m_ObjectHideFlags: 0
@@ -14319,7 +14340,7 @@ GameObject:
   - component: {fileID: 1768238172}
   - component: {fileID: 1768238171}
   m_Layer: 0
-  m_Name: BackCamera
+  m_Name: BackCameraOne
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14360,7 +14381,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

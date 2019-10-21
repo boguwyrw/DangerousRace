@@ -6,7 +6,7 @@ public class NarrowStreetScript : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerTwo"))
         {
             transform.localScale = new Vector3(0.5f, 1.0f, 1.5f);
         }
