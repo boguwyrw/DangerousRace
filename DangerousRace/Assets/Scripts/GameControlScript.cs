@@ -11,8 +11,6 @@ public class GameControlScript : MonoBehaviour {
 
     private int numberOfCheckpoints = 0;
 
-    //private bool isMultiplayerGame = false;
-    
     private bool isCarBackUp = false;
     private Vector3 playerResetPosition;
     private float playerRotationY = 0.0f;
@@ -26,30 +24,13 @@ public class GameControlScript : MonoBehaviour {
         playerOneObj.SetActive(false);
         playerTwoObj.SetActive(false);
     }
-    /*
-    public bool getMultiplayerGame()
-    {
-        return isMultiplayerGame;
-    }
-
-    public void setMultiplayerGame(bool isMultiplayerGame)
-    {
-        this.isMultiplayerGame = isMultiplayerGame;
-    }
-    */
+    
     void FixedUpdate ()
     {
-        /*
-        bool playerChoice = getMultiplayerGame();
-        
-        if (playerChoice == true)
-        {
-            playerTwoObj.SetActive(true);
-        }
-        */
+
         FirstPlayerMovement();
         SecondPlayerMovement();
-        
+
     }
 
     // poruszanie graczem numer jeden

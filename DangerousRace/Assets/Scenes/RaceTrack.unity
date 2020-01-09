@@ -3190,9 +3190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1639e9dfdfc52da4d8806cbd973af419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOne: {fileID: 1005225295}
-  playerTwo: {fileID: 1004807165}
   buttons: {fileID: 1218673226}
+  shotDownTimeText: {fileID: 0}
 --- !u!1001 &418086206
 Prefab:
   m_ObjectHideFlags: 0
@@ -12595,6 +12594,7 @@ MonoBehaviour:
   playerTwoCamera: {fileID: 193066097}
   backCameraOne: {fileID: 1768238173}
   backCameraTwo: {fileID: 354446619}
+  playerOneObj: {fileID: 1005225295}
   playerTwoObj: {fileID: 1004807165}
 --- !u!1001 &1463552367
 Prefab:
